@@ -1,6 +1,6 @@
 function SearchBar() {
   return (
-    <div>
+    <div className="searchbar-wrapper">
       <p>Search Bar</p>
     </div>
   );
