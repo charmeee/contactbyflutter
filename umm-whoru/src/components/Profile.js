@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faAt, faComment } from "@fortawesome/free-solid-svg-icons";
+
 function Profile() {
   return (
     <div className="profile-wrapper">
@@ -16,6 +19,17 @@ function Profile() {
             <button className="active:bg-main-3 w-1/2 h-16 text-lg font-semibold border-b-4 border-main-3 text-main-0">
               Friends
             </button>
+          </div>
+        </div>
+        <div className="profile-info-wrapper">
+          <div className="info-row">
+            <FontAwesomeIcon icon={faPhone} />
+          </div>
+          <div className="info-row">
+            <FontAwesomeIcon icon={faAt} />
+          </div>
+          <div className="info-row">
+            <FontAwesomeIcon icon={faComment} />
           </div>
         </div>
       </div>
