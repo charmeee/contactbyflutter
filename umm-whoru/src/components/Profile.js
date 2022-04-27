@@ -29,7 +29,7 @@ function Profile() {
               size="2x"
             />
             <span className="col-span-5 p-5 text-xl font-semibold text-main-0">
-              010-4385-3025
+              010-0000-0000
             </span>
           </div>
           <div className="info-row grid grid-cols-6 p-5 border-solid border-b-2 border-main-3">
@@ -39,7 +39,7 @@ function Profile() {
               size="2x"
             />
             <span className="col-span-5 p-4 text-xl font-semibold text-main-0">
-              ydu0919@gmail.com
+              email@gmail.com
             </span>
           </div>
           <div className="info-row grid grid-cols-6 p-4 border-solid border-b-2 border-main-3">
@@ -49,7 +49,7 @@ function Profile() {
               size="2x"
             />
             <span className="col-span-5 p-4 text-xl font-semibold text-main-0">
-              ydu0919
+              kakaotalk
             </span>
           </div>
         </div>
