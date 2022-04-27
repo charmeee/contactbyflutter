@@ -6,7 +6,7 @@ import Profile from "../components/Profile";
 
 function MyProfile() {
   return (
-    <div className="columns-3">
+    <div className="grid grid-cols-3 h-screen">
       <SearchBar />
       <Profile />
       <SideBar />
