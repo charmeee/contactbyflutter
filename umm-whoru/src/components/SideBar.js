@@ -1,6 +1,6 @@
 function SideBar() {
   return (
-    <div>
+    <div className="sidebar-wrapper">
       <p>Side Bar</p>
     </div>
   );
