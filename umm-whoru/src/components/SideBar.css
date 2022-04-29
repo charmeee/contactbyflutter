@@ -22,9 +22,9 @@
     right:0px;
     top: var(--menuTopMargin);
 
-    width: 43px;
-    height: 43px;
-    background-color: var(--backgroundcolor);
+    width: 50px;
+    height: 50px;
+    background-color: none;
     
     display: flex;
     flex-direction: column;
@@ -38,6 +38,7 @@
     font-size: 30px;
     font-family: "Apple SD Gothic Neo";
 
+    margin: 10px 10px 0 0;
 }
 
 

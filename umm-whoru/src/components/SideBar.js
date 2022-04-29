@@ -1,8 +1,8 @@
 import {useState} from "react";
-import './SideBar.css';
-
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars, faPenToSquare, faUserPlus, faCalendarDays, faGear, faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
+
+import './SideBar.css';
 
 
 function SideBarToggle(props){
