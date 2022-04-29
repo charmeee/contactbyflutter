@@ -3,6 +3,9 @@ import { faPhone, faAt, faComment } from "@fortawesome/free-solid-svg-icons";
 import {signInWithPopup} from 'firebase/auth';
 import { auth, provider } from "../firebase.config";
 
+import ProfileUpper from "./ProfileUpper";
+
+
 function Profile() {
   const signInWithGoogle = async () => {
     signInWithPopup(auth, provider).then((result) => {
@@ -16,7 +19,7 @@ function Profile() {
   return (
     <div className="profile-wrapper">
       <div className="profile-upper h-1/2">
-        <p>Profile pic + Name + Introduction</p>
+        <ProfileUpper></ProfileUpper>
       </div>
       <div className="profile-login">
         <button className="googleLoginButton" onClick={signInWithGoogle}>
