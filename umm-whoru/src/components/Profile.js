@@ -1,11 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faAt, faComment } from "@fortawesome/free-solid-svg-icons";
+import {signInWithPopup} from 'firebase/auth';
+import { auth, provider } from "../firebase.config";
 
 function Profile() {
+  const signInWithGoogle = async () => {
+    signInWithPopup(auth, provider).then((result) => {
+      
+    });
+  };
+  const user = auth.currentUser;
+  // if(user!==null){
+  //   console.log(user.displayName);
+  // }
   return (
     <div className="profile-wrapper">
       <div className="profile-upper h-1/2">
         <p>Profile pic + Name + Introduction</p>
+      </div>
+      <div className="profile-login">
+        <button className="googleLoginButton" onClick={signInWithGoogle}>
+          { user? <h3 className="subhead100">{user.displayName}</h3> : <h3 className="subhead100">구글 로그인</h3> }
+        </button>
       </div>
       <div className="profile-lower h-1/2 w-4/5 mx-auto">
         <div className="profile-button-wrapper">
