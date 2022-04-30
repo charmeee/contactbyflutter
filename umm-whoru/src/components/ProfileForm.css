@@ -1,0 +1,35 @@
+.edit-profile {
+  display: flex;
+  font-family: "Apple SD Gothic Neo";
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.edit-profile input,
+button {
+  margin: 10px 0px 5px 15px;
+  font-size: 15px;
+}
+.edit-profile label {
+  color: #87a8d0;
+}
+.profile-input {
+  margin-top: 50px;
+  border-bottom: 2px solid #deecfc;
+}
+form {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+#save {
+  font-size: 25px;
+  margin-top: 25px;
+  background-color: #b9ceeb;
+  padding: 15px;
+  color: white;
+}
+input:focus {
+  outline: none;
+}

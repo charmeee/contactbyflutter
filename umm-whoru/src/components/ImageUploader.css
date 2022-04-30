@@ -1,0 +1,31 @@
+.uploader-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Apple SD Gothic Neo";
+  font-size: 20px;
+  margin: 10px;
+}
+.uploader-wrapper .img-wrapper {
+  margin: 50px 0 20px 0;
+}
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 70%;
+  overflow: hidden;
+}
+.img-spinner {
+  width: 200px;
+  height: 200px;
+}
+button {
+  background-color: #b9ceeb;
+  padding: 10px;
+  color: white;
+}
+.toMenu {
+  font-size: 40px;
+  color: #87a8d0;
+}
