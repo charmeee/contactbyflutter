@@ -11,5 +11,4 @@ function ProfileUpper({userData}){
         </div>
     )
 }
-
 export default ProfileUpper;
