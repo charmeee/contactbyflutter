@@ -34,6 +34,7 @@ function Profile() {
           email: docsnap.data().email,
           phoneNumber: docsnap.data().phoneNumber,
           uid:auth.currentUser.uid,
+          intro: "안녕하세요, SW마에스트로 13기 연수생 "+docsnap.data().name+"입니다:)"
         });
       })
     }
@@ -45,7 +46,7 @@ function Profile() {
       </div>
       <div className="profile-login">
         <button className="googleLoginButton" onClick={signInWithGoogle}>
-          { userData.displayName? <h3 className="subhead100">{userData.displayName}</h3> : <h3 className="subhead100">구글 로그인</h3> }
+          { userData.name? <h3 className="subhead100">{userData.name}</h3> : <h3 className="subhead100">구글 로그인</h3> }
         </button>
       </div>
       <div className="profile-lower h-1/2 w-4/5 mx-auto">
