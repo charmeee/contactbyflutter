@@ -20,7 +20,7 @@ class _QRViewExampleState extends State<qrscanpage> {
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-
+  bool flag=true;
   // In order to get hot reload to work we need to pause the camera if the platform
   // is android, or resume the camera if the platform is iOS.
   @override
@@ -34,11 +34,12 @@ class _QRViewExampleState extends State<qrscanpage> {
 
   @override
   Widget build(BuildContext context) {
-    if (result != null){
+    if (result != null&&flag){
       Map<String, dynamic> resultjson=jsonDecode(result!.code.toString());
       FirebaseFirestore firestore = FirebaseFirestore.instance;
       firestore.collection(widget.uid.toString()).doc('friendsdoc').collection('friendscollect').add( resultjson );
-
+      flag=false;
+      Navigator.of(context).pop();
     }
     return Scaffold(
       body: Column(

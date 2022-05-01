@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 // import 'package:permission_handler/permission_handler.dart';
 import 'package:nugu/qrscanpage.dart';
@@ -36,9 +38,10 @@ class _mainpage extends State<mainpage> {
     });
     //실시간반영
     await for (var snapshot in firestore.collection(widget.uid.toString()).doc('friendsdoc').collection('friendscollect').snapshots()) {
+      friend.clear();
       for (var doc in snapshot.docs) {
         setState(() {
-          friend.add({"name":doc['name'].toString(),"email":doc['email'],"number":doc['number'].toString()});
+          friend.add({"name":doc['name'].toString(),"email":doc['email'],"number":doc['number'].toString(),"meetday":doc['meetday'].toString()});
         });
       }
     }
@@ -63,7 +66,7 @@ class _mainpage extends State<mainpage> {
     setState(() {
       ownerlist=[ owner["phone_num"],owner["kakaotalk_id"],owner["email"]];
     });
-
+    print("본 friends" +friend.toString());
 
     if(owner["email"]!=""){
       return  Scaffold(
@@ -137,7 +140,7 @@ class _mainpage extends State<mainpage> {
             ),
           ],
         ),
-        bottomNavigationBar: Bottom_bar(Owner:owner,uid: widget.uid),
+        bottomNavigationBar: Bottom_bar(Owner:owner,uid: widget.uid,friend: friend,),
       );
     }
     return Text("로딩중");
@@ -191,9 +194,11 @@ class Tabcontent extends StatelessWidget {
   var data;
   var id;
   var ownerIcon=[Icon(Icons.phone_android),Icon(Icons.message_rounded),Icon(Icons.email)];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    print("id:"+id.toString()+"/ data :"+data.toString());
+    return   Container(
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(10),top: Radius.zero),
@@ -202,6 +207,7 @@ class Tabcontent extends StatelessWidget {
       child: ListView.separated(
         itemCount: data.length,
         itemBuilder: (c,i){
+          print(data.length);
           if(id==0){
             return ListTile(
               leading: ownerIcon[i],
@@ -226,9 +232,10 @@ class Tabcontent extends StatelessWidget {
 
 
 class Bottom_bar extends StatelessWidget {
-  Bottom_bar({Key? key,this.Owner,this.uid}) : super(key: key);
+  Bottom_bar({Key? key,this.Owner,this.uid,this.friend}) : super(key: key);
   var uid;
   var Owner;
+  var friend;
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -244,7 +251,7 @@ class Bottom_bar extends StatelessWidget {
                     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>qrscanpage(uid:uid)));},
                     icon: Icon(Icons.add)),
                 IconButton(
-                    onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>viewwithdate()));},
+                    onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>viewwithdate(friend:friend)));},
                     icon: Icon(Icons.date_range)),
               ],
             )

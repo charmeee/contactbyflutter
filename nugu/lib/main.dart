@@ -7,7 +7,7 @@ import 'package:nugu/login.dart';
 import 'firebase_options.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:developer';
-
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:flutterfire_ui/auth.dart';
 
 
@@ -18,13 +18,13 @@ void main() async{
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(
+  initializeDateFormatting().then((_) =>runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MyApp(),
         title: "그..누구?",
       )
-  );
+  ));
 }
 
 class MyApp extends StatefulWidget {//위젯으로 짜집 기 하는형식으로 이루어져있음

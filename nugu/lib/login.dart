@@ -74,12 +74,16 @@ class _login extends State<login> {
                         onPressed: user !=null?null: ()async{signInWithGoogle(); setState(() {
                           userEmail=user?.email.toString();
                         });},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.android,),
-                            Text("구글로그인" ),
-                          ],
+                        child: SizedBox(
+                          height: 50,
+                          width: 100,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(Icons.android,),
+                              Text("구글로그인" ),
+                            ],
+                          ),
                         )),
                   ],
                 ),
